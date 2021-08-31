@@ -12,12 +12,12 @@ import ResultDisplay from './components/Results/ResultDisplay';
 function App() {
 
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/components/Results/ResultDisplay" component={ResultDisplay} /> 
-          < PageFiller />
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route exact path="/components/Results/ResultDisplay" component={ResultDisplay} /> 
+            < PageFiller />
+          </Switch>
+        </Router>
   );
 }
 
