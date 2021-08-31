@@ -1,14 +1,23 @@
 import React from 'react'
 import './App.css';
-import PageFiller from './PageFiller'
-import YelpFetch from './YelpFetch'
+import PageFiller from './PageFiller';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import ResultDisplay from './components/Results/ResultDisplay';
+
 
 function App() {
-  return (
-    <>
-    <PageFiller />
-    <button onClick={(event) => { YelpFetch(event); /*YelpPrint()*/}}>Randomize</button>
-    </>
+
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/components/Results/ResultDisplay" component={ResultDisplay} /> 
+          < PageFiller />
+        </Switch>
+      </Router>
   );
 }
 

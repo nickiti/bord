@@ -1,5 +1,4 @@
-import React from 'react'
-import YelpFetch from './YelpFetch'
+import React from 'react';
 
 export default function YelpPrint() {
     return (
