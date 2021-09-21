@@ -6,7 +6,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import ResultDisplay from './components/Results/ResultDisplay';
+import ResultDisplay from './Results/ResultDisplay';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -14,8 +15,14 @@ function App() {
     return (
         <Router>
           <Switch>
-            <Route exact path="/components/Results/ResultDisplay" component={ResultDisplay} /> 
-            < PageFiller />
+            <Route exact path="/Results/ResultDisplay" component={ResultDisplay} /> 
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"}}>
+                <Route exact path="/Results/ResultDisplay" component={ResultDisplay} /> 
+                <PageFiller/>
+            </div>
           </Switch>
         </Router>
   );

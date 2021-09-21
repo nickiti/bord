@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import {Link} from 'react-router-dom';
+import {LinkContainer} from 'react-router-bootstrap';
+import Button from "react-bootstrap/Button";
 
 export default function PageFiller(props) {
     const [location, setLocation] = useState(props.location || '');
@@ -24,16 +25,19 @@ export default function PageFiller(props) {
                     <p>
                         Where are we ?
                     </p>
-                    <input type='text' name='location' onChange={(e) => setLocation(e.target.value)}/>
+                        <input type='text' name='location' onChange={(e) => setLocation(e.target.value)}/>
                     <p>
                         How far are we willing to go ?
                     </p>
-                    <input type='number' name='distance' min='0' max='50' placeholder="0 to 50 mi" onChange={(e) => setDistance(e.target.value)}/>
+                        <input type='number' name='distance' min='0' max='50' placeholder="0 to 50 mi" onChange={(e) => setDistance(e.target.value)}/>
                     <p>
                         Anything we feeling ?
                     </p>
-                    <input type='text' name='category' onChange={(e) => setCategory(e.target.value)} />
-                    <Link to='/components/Results/ResultDisplay' onClick={submit}>Randomize</Link>
+                        <input type='text' name='category' onChange={(e) => setCategory(e.target.value)}/>
+                    <p></p>
+                    <LinkContainer to='/Results/ResultDisplay' onClick={submit}>
+                        <Button variant="primary" >Randomize</Button>
+                    </LinkContainer>
                 </div>
             </form>
     )
