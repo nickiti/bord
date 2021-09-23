@@ -2,8 +2,8 @@ import React from 'react';
 import {LinkContainer} from 'react-router-bootstrap';
 import Button from "react-bootstrap/Button";
 
-class ResultDisplay extends React.Component {  
-    render (){
+export function ResultDisplay() { 
+    
     return ( 
             <div
             style={{
@@ -18,11 +18,11 @@ class ResultDisplay extends React.Component {
                     <p>Address</p>
                     <p>distance</p> 
                 </div>
-                <LinkContainer to="/App">
+                <LinkContainer to="/">
                     <Button variant='primary'>Redo</Button>
                 </LinkContainer>
             </div>
         )
-}
+
 }
 export default ResultDisplay;

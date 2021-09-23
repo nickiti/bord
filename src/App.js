@@ -2,29 +2,32 @@ import React from 'react'
 import './App.css';
 import PageFiller from './PageFiller';
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
-import ResultDisplay from './Results/ResultDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Search} from './search/Search';
+import useReactRouter from 'use-react-router';
 
 
 function App() {
 
+    const {history} = useReactRouter();
+
+    function search(location, radius, term) {
+    const encodedTerm = encodeURI(term);
+    const encodedLocation = encodeURI(location);
+    const encodedRadius = encodeURI(radius)
+    history.push(`/search?find_desc=${encodedTerm}&find_radius=${encodedRadius}&find_loc=${encodedLocation}`);
+    } 
+
     return (
-        <Router>
           <Switch>
-            <Route exact path="/Results/ResultDisplay" component={ResultDisplay} /> 
-            <div style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"}}>
-                <Route exact path="/Results/ResultDisplay" component={ResultDisplay} /> 
-                <PageFiller/>
+            <Route path="/search" component={Search}/>
+            <div>
+              <PageFiller search={search}/> 
             </div>
           </Switch>
-        </Router>
   );
 }
 
