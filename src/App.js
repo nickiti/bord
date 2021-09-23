@@ -24,7 +24,10 @@ function App() {
     return (
           <Switch>
             <Route path="/search" component={Search}/>
-            <div>
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"}}>
               <PageFiller search={search}/> 
             </div>
           </Switch>
