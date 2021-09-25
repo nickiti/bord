@@ -12,13 +12,12 @@ export default function PageFiller(props) {
         }
         console.log(location, radius, term);
         e.preventDefault();   
-    }
-      
+    }      
 
 
     return (
         <div>
-            <form>    
+            <form onSubmit={submit}>    
                 <div>
                     <p>
                         Yay for being indecisive !
@@ -30,7 +29,7 @@ export default function PageFiller(props) {
                     <p>
                         How far are we willing to go ?
                     </p>
-                        <input type='number' name='radius' min='0' max='50' placeholder="0 to 50 mi" onChange={(e) => setRadius(e.target.value)}/>
+                        <input type='number' name='radius' min='0' max='25' placeholder="0 to 25 mi" onChange={(e) => setRadius((e.target.value)*1609)}/>
                     <p>
                         Anything we feeling ?
                     </p>

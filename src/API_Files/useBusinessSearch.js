@@ -5,7 +5,7 @@ import * as api from './YelpFetch';
 export function useBusinessSearch(location, radius, term){
     const [businesses, setBusinesses] = useState([]);
     const [amountResults, setAmountResults] = useState();
-    const [searchParams, setSearchParams] = useState(location, radius, term);
+    const [searchParams, setSearchParams] = useState({location, radius, term});
 
 
     useEffect(() => {
@@ -16,12 +16,13 @@ export function useBusinessSearch(location, radius, term){
                 const resp = await rawData.json();
                 setBusinesses(resp.businesses);
                 setAmountResults(resp.total);
+                console.log(resp.businesses)
             } catch(e) {
-                console.error(e)
+                console.error(e);
             }
         };
         fetchData();
-        }, [location, radius, term] );
-        return [businesses, amountResults, searchParams, setSearchParams]
+    }, [searchParams] );
+    return [businesses, amountResults, searchParams, setSearchParams];
 
 }

@@ -1,22 +1,41 @@
 import React from 'react';
 import ResultDisplay from './Results/ResultDisplay';
 // import {useReactRouter} from 'use-react-router'
-// import { useBusinessSearch } from '../API_Files/useBusinessSearch';
+import { useBusinessSearch } from '../API_Files/useBusinessSearch';
+import { useLocation } from 'react-router';
+// import { useHistory } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Button } from 'bootstrap-react';
 
-export function Search() { 
+export function Search(props) { 
     
-    
-    // const {location,history} = useReactRouter();
-    // const params = new URLSearchParams(location.search);
-    // const locationParam = params.get('find_loc');
-    // const radius = params.get('find_radius');
-    // const term = params.get('find_desc');
-    // const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(locationParam, radius, term);
-  
-   
+    const location = useLocation();
+    // const history = useHistory();
+    const params = new URLSearchParams(location.search);
+    const locationParam = params.get("find_loc");
+    const radius = params.get("find_radius");
+    const term = params.get("find_term");
+    const [businesses] = useBusinessSearch(locationParam, radius, term);
+
+    if (!businesses || !businesses.length) {
+        return (<div style={{display: 'flex', 
+        justifyContent: "center",
+        alignItems: "center"}}> 
+
+                    <img src='https://static.impression.co.uk/2018/05/loading1.gif' alt='loading' />
+
+                    <LinkContainer to='/'>
+                        <Button>Home</Button>
+                    </LinkContainer>
+
+                </div>)
+    }
+
+
+
     return (
             <div>
-                <ResultDisplay /*businesses={businesses} amountResults={amountResults} searchParams={searchParams} performSearch={performSearch}*/ />
+                <ResultDisplay key={businesses.id} businesses={businesses}/>
             </div>
         )
     
