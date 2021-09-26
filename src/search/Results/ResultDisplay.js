@@ -36,11 +36,11 @@ export function ResultDisplay(props) {
                     <div>
                         <p>{distance} miles</p>
                     </div>
+                    <Button onClick={() => window.location.reload(false)}>Redo</Button>
                 </div>
                 <LinkContainer to="/">
-                    <Button variant='primary'>Home</Button>
+                    <Button variant='primary' >Home</Button>
                 </LinkContainer>
-                <Button onClick={() => window.location.reload(false)}>Redo</Button>
             </div>
         )
 

@@ -34,7 +34,9 @@ export function Search(props) {
 
 
     return (
-            <div>
+            <div style={{display: 'flex', 
+            justifyContent: "center",
+            alignItems: "center"}}>
                 <ResultDisplay key={businesses.id} businesses={businesses}/>
             </div>
         )
