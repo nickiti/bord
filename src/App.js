@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Search} from './search/Search';
 import LandingPage from './Landing/LandingPage';
 
+//https://cors-anywhere.herokuapp.com/corsdemo
+
 
 function App() {
  

@@ -1,16 +1,13 @@
 import React from 'react';
 import ResultDisplay from './Results/ResultDisplay';
-// import {useReactRouter} from 'use-react-router'
 import { useBusinessSearch } from '../API_Files/useBusinessSearch';
 import { useLocation } from 'react-router';
-// import { useHistory } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button } from 'bootstrap-react';
 
 export function Search(props) { 
     
     const location = useLocation();
-    // const history = useHistory();
     const params = new URLSearchParams(location.search);
     const locationParam = params.get("find_loc");
     const radius = params.get("find_radius");

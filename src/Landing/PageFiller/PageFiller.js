@@ -17,7 +17,7 @@ export default function PageFiller(props) {
 
     return (
         <div>
-            <h1>MEG AND NICKS GRAND ADVENTURE</h1>
+            <h1>MEG AND NICKS GRAND ADVENTURE</h1> 
             <div style={{display:"flex", justifyContent: "center",alignItems:"center"}}>
                 <form onSubmit={submit}>    
                     <div>
@@ -36,8 +36,8 @@ export default function PageFiller(props) {
                         <p></p>
                     </div>
                 </form>
-                <Button variant="primary" onClick={submit}>Randomize</Button>
             </div>
+            <Button variant="primary" onClick={submit}>Randomize</Button>
         </div>
     )
 };

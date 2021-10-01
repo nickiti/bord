@@ -19,6 +19,7 @@ export function ResultDisplay(props) {
     const city = b.location.city;
     const state = b.location.state;
     const zip = b.location.zip_code;
+    const url = b.url;
     const distance = (Math.round(b.distance/1609));
 
     return ( 
@@ -35,6 +36,7 @@ export function ResultDisplay(props) {
                     </div>
                     <div>
                         <p>{distance} miles</p>
+                        <a href={url} target="_blank" rel="noopener noreferrer">Yelp it</a>
                     </div>
                     <Button onClick={() => window.location.reload(false)}>Redo</Button>
                 </div>
