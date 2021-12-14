@@ -26,3 +26,5 @@ export function useBusinessSearch(location, radius, term){
     return [businesses, amountResults, searchParams, setSearchParams];
 
 }
+
+

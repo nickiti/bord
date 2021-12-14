@@ -1,18 +1,20 @@
 import React from 'react';
-import ResultDisplay from './Results/ResultDisplay';
+import ResultDisplay from './ResultDisplay';
 import { useBusinessSearch } from '../API_Files/useBusinessSearch';
 import { useLocation } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button } from 'bootstrap-react';
 
+
 export function Search(props) { 
     
-    const location = useLocation();
-    const params = new URLSearchParams(location.search);
-    const locationParam = params.get("find_loc");
-    const radius = params.get("find_radius");
-    const term = params.get("find_term");
-    const [businesses] = useBusinessSearch(locationParam, radius, term);
+    let location = useLocation();
+    let params = new URLSearchParams(location.search);
+    let locationParam = params.get("find_loc");
+    let radius = params.get("find_radius");
+    let term = params.get("find_term");
+    let [businesses] = useBusinessSearch(locationParam, radius, term);
+    
 
     if (!businesses || !businesses.length) {
         return (<div style={{display: 'flex', 
@@ -26,14 +28,14 @@ export function Search(props) {
                     </LinkContainer>
 
                 </div>)
+    
     }
-
 
 
     return (
             <div style={{display: 'flex', 
             justifyContent: "center",
-            alignItems: "center"}}>
+            alignItems: "center"}} className='root'>
                 <ResultDisplay key={businesses.id} businesses={businesses}/>
             </div>
         )
