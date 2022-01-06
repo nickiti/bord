@@ -7,10 +7,9 @@ There is a voting system and other features in that is in development right now.
 Yelps API is cannot be called through the front end so it needs to be hosted on a server which 
 for this application is heroku.
 
-Heroku recently changed their public server demo to restrict traffic and abuse.
-
 There is a development demo for testing.
 This is used to gain temporary access to heroku servers.
 
 https://cors-anywhere.herokuapp.com/corsdemo
 
+Have yet to deploy it.
