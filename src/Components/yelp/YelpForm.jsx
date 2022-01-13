@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Button from "react-bootstrap/Button";
 
 
-export default function PageFiller(props) {
+export default function YelpForm(props) {
     let [location, setLocation] = useState(props.location || '');
     let [radius, setRadius] = useState(props.radius || '');
     let [term, setTerm] = useState(props.term || '');
@@ -17,6 +17,8 @@ export default function PageFiller(props) {
             setLng(position.coords.longitude);
             }, () => {
             console.log('Geolocation was successful')
+            console.log(lat)
+            console.log(lng)
             });
             location = (lat + `,` + lng)
         }
@@ -34,9 +36,8 @@ export default function PageFiller(props) {
 
 
     return (
-        <div style={{display: "flex",justifyContent: "center",alignItems: "center"}} className='card page-filler__container'>
             <div className='card page-filler__form-container' style={{display: "flex",justifyContent: "center",alignItems: "center"}}>
-                <h1>MEG AND NICKS GRAND ADVENTURE</h1> 
+                    <h2>Find a place to eat</h2>
                     <a href='https://cors-anywhere.herokuapp.com/corsdemo'>Click here to start server</a>
                     <form onSubmit={submit}>    
                         <div>
@@ -49,8 +50,6 @@ export default function PageFiller(props) {
                     </form>
                 <div className='form-input'><Button variant="primary" onClick={submit}>Randomize</Button></div>
             </div>
-
-        </div>
     )
 };
 

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { useHistory } from 'react-router';
-import PageFiller from './PageFiller';
+import YelpForm from './YelpForm';
 
 
-export default function LandingPage() {
+export default function FoodSearch() {
     
     const history = useHistory();
+
     function search(location, radius, term) {
 
         const encodedLocation = encodeURI(location);
@@ -15,12 +16,14 @@ export default function LandingPage() {
         history.push(`/search?find_loc=${encodedLocation}&find_radius=${encodedRadius}&find_term=${encodedTerm}`);
 
     } 
-    
-    return (
-        <div style={{display: 'flex', 
-            justifyContent: "center",
-            alignItems: "center"}} className='root'>
-            <PageFiller search={search}/>
-        </div>
-    )
+
+
+        return ( 
+            <div style={{display: 'flex', 
+                justifyContent: "center",
+                alignItems: "center"}}>
+                <YelpForm search={search}/>
+            </div>) 
+            
+
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ResultDisplay from './ResultDisplay';
-import { useBusinessSearch } from '../API_Files/useBusinessSearch';
+import { useBusinessSearch } from '../../API_Files/useBusinessSearch';
 import { useLocation } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button } from 'bootstrap-react';

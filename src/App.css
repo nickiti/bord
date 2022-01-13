@@ -83,7 +83,6 @@
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   flex-direction: column;
-  background-image: url('../src/assets/pig-cute.gif');
   z-index: 1;
 
 }
@@ -94,8 +93,8 @@
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.6);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
-  width: 90%;
-  height: 50%;
+  width: 60%;
+  height: 40%;
   flex-direction: column;
   z-index: 1000;
   background-color: white;

@@ -25,7 +25,7 @@ export function ResultDisplay(props) {
     return ( 
             <div style={{display: "flex",justifyContent: "center",alignItems: "center", backgroundColor:'#CFEEFA'}} className='card result-display__container'>
                 
-                <LinkContainer to="/" className='home-button'>
+                <LinkContainer to="/food" className='home-button'>
                     <Button variant='primary' >Start Over</Button>
                 </LinkContainer>
 
