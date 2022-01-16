@@ -8,7 +8,8 @@ export default function YelpForm(props) {
     let [term, setTerm] = useState(props.term || '');
     const [lat, setLat] = useState(null);
     const [lng, setLng] = useState(null);
-    if (location === 'Current location'){
+
+    if (location.toUpperCase() === 'CURRENT LOCATION'){
         if (!navigator.geolocation) {
             console.log('The browser does not accept Geolocation')
         } else {

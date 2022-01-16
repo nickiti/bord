@@ -23,8 +23,8 @@ export function Search(props) {
 
                     <img src='https://static.impression.co.uk/2018/05/loading1.gif' alt='loading' />
 
-                    <LinkContainer to='/'>
-                        <Button>Home</Button>
+                    <LinkContainer to='/food'>
+                        <Button>Back</Button>
                     </LinkContainer>
 
                 </div>)
