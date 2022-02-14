@@ -1,27 +1,24 @@
 import React from 'react';
 
 const Step = ({title, heading , description, img, alternate}) => {
-    const row = "lg:items-center lg:flex lg:flex-row lg:justify-end";
-    const rowReverse = "lg:items-center lg:flex lg:flex-row-reverse lg:justify-center";
+    const row = "lg:items-center lg:flex lg:flex-row lg:justify-end pb-10";
+    const rowReverse = "lg:items-center lg:flex lg:flex-row-reverse lg:justify-center pb-10";
 
 
     return (
         <div className={alternate ? row : rowReverse}>
-            <div id="section" style={{textShadow:'0px 1px 1px gray'}} className="flex flex-col items-center justify-start font-sans min-h-96 bg-black-50 lg:pt-10 lg:pb-20 lg:bg-hero lg:bg-cover">
-                <div> 
-                    <p>{title}</p> 
-                </div>
+            <div id="section" className="lg:w-2/6 lg:-ml-20 lg:-mt-10 lg:flex lg:flex-col lg:justify-center lg:items-start">
+                <p className='text-4xl '> {title}</p>
                 
-                <div>
-                    {heading}
-                </div>
+                <p>{heading}</p>
 
-                <div>
-                    {description}
-                </div>
-
-                <div>{img}</div>
+                <p>{description}</p>
             </div>
+
+            <div className="lg:flex lg:justify-start ml-10 lg:ml-0 lg:w-3/6 pr-20 pl-10">
+                 <img className=" lg:-mt-24 lg:-mb-20" src={img} alt="phone"/>
+            </div>
+            
         </div>
     )
 }

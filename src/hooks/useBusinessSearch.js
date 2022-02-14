@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import * as api from './YelpFetch';
+import * as api from '../API_Files/YelpFetch';
 
 
-export function useBusinessSearch(location, radius, term){
+export function useBusinessSearch(location,term){
     const [businesses, setBusinesses] = useState([]);
     const [amountResults, setAmountResults] = useState();
-    const [searchParams, setSearchParams] = useState({location, radius, term});
+    const [searchParams, setSearchParams] = useState({location, term});
 
 
     useEffect(() => {
@@ -16,7 +16,6 @@ export function useBusinessSearch(location, radius, term){
                 const resp = await rawData.json();
                 setBusinesses(resp.businesses);
                 setAmountResults(resp.total);
-                console.log(resp.businesses)
             } catch(e) {
                 console.error(e);
             }

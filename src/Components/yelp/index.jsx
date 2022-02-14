@@ -7,21 +7,18 @@ export default function FoodSearch() {
     
     const history = useHistory();
 
-    function search(location, radius, term) {
+    function search(location, term) {
 
         const encodedLocation = encodeURI(location);
-        const encodedRadius = encodeURI(radius)
         const encodedTerm = encodeURI(term);
 
-        history.push(`/search?find_loc=${encodedLocation}&find_radius=${encodedRadius}&find_term=${encodedTerm}`);
+        history.push(`food/search?find_loc=${encodedLocation}&find_term=${encodedTerm}`);
 
     } 
 
 
         return ( 
-            <div style={{display: 'flex', 
-                justifyContent: "center",
-                alignItems: "center"}}>
+            <div className='flex justify-center items-center mt-auto'>
                 <YelpForm search={search}/>
             </div>) 
             
